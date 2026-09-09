@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poleramma Jathara — Official CDP Launch</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%}
+body{overflow:hidden;background:#080503;color:#fff;font-family:'Segoe UI',sans-serif}
+.event-bg{position:fixed;inset:0;background:linear-gradient(180deg,rgba(5,2,0,.25),rgba(10,4,1,.48) 45%,rgba(3,1,0,.95)),url("jathara-bg.jpg") center/cover no-repeat;transform:scale(1.04);animation:slowZoom 18s ease-in-out infinite alternate}
+@keyframes slowZoom{from{transform:scale(1.04)}to{transform:scale(1.10)}}
+.vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 25%,rgba(0,0,0,.25) 60%,rgba(0,0,0,.88) 100%)}
+.light{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(70px);opacity:.18;pointer-events:none}
+.light.one{top:-100px;left:-80px;background:#ff9d00}.light.two{top:5%;right:-120px;background:#ff4d00}.light.three{bottom:-120px;left:35%;background:#ffc400}
+.stage{position:relative;z-index:5;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:25px}
+.container{width:min(720px,100%);text-align:center}
+#pre-launch{display:flex;flex-direction:column;align-items:center;animation:fadeUp 1.2s ease forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.top-line{width:90px;height:2px;background:linear-gradient(90deg,transparent,#f7b928,transparent);margin-bottom:22px}
+.eyebrow{font-size:11px;letter-spacing:5px;color:#e6b84b;text-transform:uppercase;margin-bottom:18px}
+.telugu-title{font-family:'Noto Serif Telugu',serif;font-size:clamp(30px,6vw,55px);line-height:1.25;font-weight:800;background:linear-gradient(180deg,#fff7cf 0%,#f8cf68 40%,#a86c14 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 3px 25px rgba(255,170,20,.18)}
+.main-title{margin-top:12px;font-size:clamp(22px,4vw,38px);letter-spacing:5px;font-weight:800;color:#fff}
+.description{margin-top:20px;color:rgba(255,240,210,.72);font-size:14px;letter-spacing:1px}
+.launch-wrap{margin-top:38px;position:relative}
+.launch-btn{min-width:260px;padding:17px 42px;border:1px solid rgba(255,221,130,.7);border-radius:4px;color:#1b0c00;background:linear-gradient(135deg,#ffe9a3,#e6a82d 45%,#fff0a8);font-size:15px;font-weight:900;letter-spacing:3px;cursor:pointer;box-shadow:0 0 0 1px rgba(255,180,30,.15),0 8px 35px rgba(255,150,0,.3);transition:.3s ease}
+.launch-btn:hover{transform:translateY(-3px) scale(1.025);box-shadow:0 12px 50px rgba(255,170,30,.5)}
+.launch-btn:active{transform:scale(.97)}
+.launch-wrap:before,.launch-wrap:after{content:"";position:absolute;top:50%;width:90px;height:1px;background:linear-gradient(90deg,transparent,#c99635)}
+.launch-wrap:before{right:100%}.launch-wrap:after{left:100%;transform:rotate(180deg)}
+#post-launch{display:none;flex-direction:column;align-items:center}
+.success{font-size:11px;letter-spacing:4px;color:#ffd66b;margin-bottom:18px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.65}50%{opacity:1}}
+.poster-area{position:relative;width:min(500px,90vw)}
+.poster-area:before{content:"";position:absolute;inset:-25px;background:radial-gradient(circle,rgba(255,180,35,.35),transparent 65%);filter:blur(20px);z-index:-1}
+.poster-box{position:relative;width:100%;aspect-ratio:1/1;background:#050403;border:1px solid rgba(255,207,91,.8);box-shadow:0 25px 80px rgba(0,0,0,.9),0 0 45px rgba(255,170,25,.25);overflow:hidden;animation:posterReveal 1.1s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes posterReveal{0%{opacity:0;transform:scale(.72) translateY(50px);filter:brightness(.3) blur(8px)}60%{filter:brightness(1.3) blur(0)}100%{opacity:1;transform:scale(1) translateY(0);filter:brightness(1)}}
+.poster-box img{width:100%;height:100%;display:block;object-fit:cover}
+.launch-text{margin-top:18px;font-family:'Noto Serif Telugu',serif;font-size:15px;color:#f3d078}
+.particle{position:fixed;width:3px;height:3px;background:#ffc95a;border-radius:50%;pointer-events:none;opacity:0;animation:floatParticle linear infinite}
+@keyframes floatParticle{0%{transform:translateY(30px);opacity:0}15%{opacity:.8}85%{opacity:.5}100%{transform:translateY(-110vh);opacity:0}}
+#flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:20}
+.flash-active{animation:flash .45s ease-out}
+@keyframes flash{0%{opacity:0}15%{opacity:.75}100%{opacity:0}}
+@media(max-width:600px){.stage{padding:20px}.main-title{letter-spacing:3px}.description{font-size:12px}.launch-wrap:before,.launch-wrap:after{display:none}.poster-area{width:min(430px,92vw)}}
+
+
+/* ===== PREMIUM CINEMATIC TYPOGRAPHY ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Noto+Serif+Telugu:wght@500;600;700;800&display=swap');
+
+:root{
+  --cinema-font:'Cinzel', 'Times New Roman', serif;
+  --telugu-font:'Noto Serif Telugu', serif;
+  --gold-1:#fff4bd;
+  --gold-2:#e9b84d;
+  --gold-3:#8d5712;
+}
+
+body, button {
+  font-family:var(--cinema-font);
+}
+
+.eyebrow{
+  font-family:var(--cinema-font);
+  font-weight:600;
+  letter-spacing:6px;
+  font-size:10px;
+}
+
+.telugu-title{
+  font-family:var(--telugu-font);
+  font-weight:800;
+  letter-spacing:.015em;
+  line-height:1.35;
+  background:linear-gradient(180deg,var(--gold-1) 0%,#f7d46f 42%,var(--gold-3) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 5px 20px rgba(235,170,35,.20));
+}
+
+.main-title{
+  font-family:var(--cinema-font);
+  font-weight:800;
+  letter-spacing:7px;
+  font-size:clamp(20px,4vw,37px);
+  color:#f8e5a1;
+  text-shadow:
+    0 2px 0 #2b1704,
+    0 0 12px rgba(255,210,90,.20),
+    0 0 32px rgba(255,160,20,.13);
+}
+
+.description{
+  font-family:var(--cinema-font);
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.launch-btn{
+  font-family:var(--cinema-font);
+  font-weight:800;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.success{
+  font-family:var(--cinema-font);
+  font-weight:700;
+  letter-spacing:5px;
+}
+
+.launch-text{
+  font-family:var(--telugu-font);
+  font-weight:700;
+  letter-spacing:.04em;
+}
+
+/* Add a refined cinematic divider around the title area */
+.top-line{
+  width:125px;
+  height:1px;
+  margin-bottom:24px;
+  background:linear-gradient(90deg,transparent,#e7b94e,#fff0a3,#e7b94e,transparent);
+  box-shadow:0 0 14px rgba(238,190,75,.35);
+}
+
+/* Slightly more cinematic spacing */
+#pre-launch{
+  animation:cinemaEntrance 1.5s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes cinemaEntrance{
+  from{opacity:0;transform:translateY(42px) scale(.985);filter:blur(5px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+
+@media(max-width:600px){
+  .main-title{letter-spacing:4px}
+  .eyebrow{letter-spacing:4px}
+}
+
+</style>
+
+<style>
+.cinematic-typography{opacity:0;animation:cinemaPageIn 1.1s ease-out .15s forwards}
+@keyframes cinemaPageIn{from{opacity:0}to{opacity:1}}
+</style>
+<script>
+document.fonts && document.fonts.ready.then(function(){
+  document.documentElement.classList.add('fonts-ready');
+});
+</script>
+
+
+<style>
+.vvip-credit{
+  margin-top:22px;
+  text-align:center;
+  animation:vvipIn 1.4s ease .45s both;
+}
+.vvip-label{
+  font-family:var(--cinema-font);
+  font-size:9px;
+  letter-spacing:4px;
+  color:#cfa653;
+  margin-bottom:8px;
+}
+.vvip-name{
+  font-family:var(--cinema-font);
+  font-size:clamp(14px,2.5vw,20px);
+  font-weight:700;
+  letter-spacing:2px;
+  color:#f6df9b;
+  text-shadow:0 0 18px rgba(255,205,100,.16);
+}
+.vvip-role{
+  margin-top:5px;
+  font-family:var(--cinema-font);
+  font-size:8px;
+  letter-spacing:2.2px;
+  color:rgba(255,235,190,.58);
+}
+@keyframes vvipIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+
+</head>
+<body class="cinematic-typography">
+<div class="event-bg"></div><div class="light one"></div><div class="light two"></div><div class="light three"></div><div class="vignette"></div><div id="flash"></div>
+<div class="particle" style="left:8%;animation-duration:8s;animation-delay:1s"></div>
+<div class="particle" style="left:17%;animation-duration:11s;animation-delay:3s"></div>
+<div class="particle" style="left:29%;animation-duration:9s;animation-delay:2s"></div>
+<div class="particle" style="left:43%;animation-duration:13s;animation-delay:5s"></div>
+<div class="particle" style="left:58%;animation-duration:10s;animation-delay:1s"></div>
+<div class="particle" style="left:71%;animation-duration:12s;animation-delay:4s"></div>
+<div class="particle" style="left:86%;animation-duration:9s;animation-delay:2s"></div>
+<div class="stage"><div class="container">
+<div id="pre-launch">
+<div class="top-line"></div><div class="eyebrow">OFFICIAL CDP GRAND LAUNCH</div>
+<div class="telugu-title">శ్రీ శ్రీ శ్రీ పోలేరమ్మ తల్లి</div>
+<div class="main-title">VENKATAGIRI JATHARA</div>
+<p class="description">The Official CDP is ready to be unveiled</p>
+<div class="vvip-credit">
+  <div class="vvip-label">OFFICIALLY LAUNCHING BY</div>
+  <div class="vvip-name">Sri Kurugondla Ramakrishna Garu</div>
+  <div class="vvip-role">MEMBER OF LEGISLATIVE ASSEMBLY • VENKATAGIRI</div>
+</div>
+<div class="launch-wrap"><button class="launch-btn" onclick="startLaunch()">LAUNCH NOW</button></div>
+</div>
+<div id="post-launch">
+<div class="success">✦ OFFICIALLY LAUNCHED ✦</div>
+<div class="poster-area"><div class="poster-box"><img id="cdpImage" src="cdp.jpg" alt="Official CDP"></div></div>
+<div class="launch-text">వెంకటగిరి జాతర 2026</div>
+</div>
+</div></div>
+<script>
+function startLaunch(){
+const flash=document.getElementById("flash");flash.classList.remove("flash-active");void flash.offsetWidth;flash.classList.add("flash-active");
+document.getElementById("pre-launch").style.display="none";document.getElementById("post-launch").style.display="flex";
+try{const C=window.AudioContext||window.webkitAudioContext,ctx=new C(),osc=ctx.createOscillator(),gain=ctx.createGain();osc.connect(gain);gain.connect(ctx.destination);osc.type="sine";osc.frequency.setValueAtTime(90,ctx.currentTime);osc.frequency.exponentialRampToValueAtTime(650,ctx.currentTime+.7);gain.gain.setValueAtTime(.18,ctx.currentTime);gain.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+1);osc.start();osc.stop(ctx.currentTime+1)}catch(e){}
+createBurst();
+}
+function createBurst(){
+for(let i=0;i<90;i++){const p=document.createElement("div");p.style.position="fixed";p.style.left="50%";p.style.top="50%";p.style.width=Math.random()*4+2+"px";p.style.height=p.style.width;p.style.borderRadius="50%";p.style.background=Math.random()>.5?"#ffd45c":"#fff1a6";p.style.pointerEvents="none";p.style.zIndex="30";const a=Math.random()*Math.PI*2,d=200+Math.random()*500,x=Math.cos(a)*d,y=Math.sin(a)*d;p.animate([{transform:"translate(-50%,-50%) scale(1)",opacity:1},{transform:`translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`,opacity:0}],{duration:900+Math.random()*900,easing:"cubic-bezier(.1,.7,.2,1)"});document.body.appendChild(p);setTimeout(()=>p.remove(),2000)}
+}
+</script>
+
+<script>
+/* Cinematic reveal timing layer */
+(function(){
+  const original = window.startLaunch;
+  if(!original) return;
+  window.startLaunch = function(){
+    const pre = document.getElementById('pre-launch');
+    if(pre){
+      pre.style.transition='opacity .8s ease, transform .8s ease, filter .8s ease';
+      pre.style.opacity='0';
+      pre.style.transform='scale(.96) translateY(-12px)';
+      pre.style.filter='blur(4px)';
+      setTimeout(()=>original(), 720);
+    } else {
+      original();
+    }
+  };
+})();
+</script>
+
+</body>
+</html>
